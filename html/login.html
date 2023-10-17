@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-blogs | log in or sign up</title>
+    <link rel="stylesheet" href="login.css">
+    <script>
+        const inputField = document.querySelector("input[type='text']");
+      
+        inputField.addEventListener("blur", function() {
+          const value = inputField.value;
+          const pattern = /^[0-9]{3}-[0-9]{3}-[0-9]{4}$|^[a-zA-Z0-9.-%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2}$/;
+      
+          if (!pattern.test(value)) {
+            alert("Invalid email address or phone number format. Please enter a valid email address or phone number in the format XXX-XXX-XXXX or xxxx@xxxx.xx");
+          }
+        });
+      </script>
+</head>
+<body>
+    
+<div class="box">
+    <div  class="boxa" style="padding:200px 0 100px 100px"><span style="font-size:70px;">G-blogs: Write<br>    your <i>blogs</i> here</span><br>
+        <p style="margin:20px 0 0;">Create your blogs with this free platform.</p></div>
+    <div class="all">
+    <form action="/action.php">
+        <input type="text" placeholder="Email address or phone number" pattern="^[0-9]{3}-[0-9]{3}-[0-9]{4}$|^[a-zA-Z0-9.-%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2}$" required >
+        <input type="password" placeholder="Password">
+        <input type="Submit" value="Log in" class="log">
+    
+        
+        <button onclick="window.location.href='/sign.html'">Create new account</button>
+    </form>
+   
+    </div>
+    
+</div>
+</body>
+</html>
